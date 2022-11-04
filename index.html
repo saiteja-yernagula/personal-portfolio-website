@@ -69,7 +69,47 @@
       padding-top: 10px;
 
     }
-   
+    /*side full navigation*/
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background: linear-gradient(-80deg, #100101, #0a2aa0);
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.80s;
+
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 30px;
+      color: #818181;
+      display: block;
+      transition: 0.4s;
+      text-align: center;
+
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      margin-top: 0;
+      font-size: 60px;
+      margin-left: 45px;
+      width: 80px;
+    }
+   /*For images in main bar*/
   .img1{
       border-radius: 79px;
     }
@@ -378,9 +418,25 @@ form{
 </head>
 <body>
 <div id="menu">
- <h1 class="header"> Saiteja</h1>
- 
-</div>
+    <h1 class="header"> Saiteja</h1>
+
+    <div class="divimain">
+      <div onclick="openNav()">
+        <div class="divi1"></div>
+        <div class="divi2"></div>
+        <div class="divi3"></div>
+      </div>
+    </div>
+    <div id="mysidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#skills">Skills</a>
+       <a href="#contact">Contact</a>
+
+    </div>
+  </div>
 
 <div class="about coll">
  <h1> I'am a Front-End Developer</h1>
@@ -505,7 +561,16 @@ I love exploring new technologies and contributing my best in work and team. Eve
      <button type="submit" value="Lets talk">Lets talk</button> 
      </form>
 </div>
+script>
+    function openNav() {
+      document.getElementById("mysidenav").style.width = "50%";
+    }
 
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+      document.getElementById("mysidenav").style.width = "0";
+    }
+  </script>
 </body>
 
 </html>
